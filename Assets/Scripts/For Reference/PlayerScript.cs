@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization  
     void Start () {
         lives = 3;
-        coinsLeft = FindObjectsOfType<CoinScript>().Length;
+        //coinsLeft = FindObjectsOfType<CoinScript>().Length;
         endIMG.enabled = false;
         deadIMG.enabled = false;
     }

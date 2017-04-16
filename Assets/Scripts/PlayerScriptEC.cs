@@ -33,14 +33,14 @@ public class PlayerScriptEC : MonoBehaviour
     public float dialogueWaitTime = 5f;
     float msgWaitTime = 1.5f;
     public string npcDialogueText;
-    EndCubeScript endCube;
+    //EndCubeScript endCube;
 
     // Use this for initialization  
     void Start()
     {
         lives = 3;
         //coinsLeft = FindObjectsOfType<CoinScript>().Length;
-        endCube = FindObjectOfType<EndCubeScript>();
+        //endCube = FindObjectOfType<EndCubeScript>();
         endIMG.enabled = false;
         deadIMG.enabled = false;
         click.enabled = false;

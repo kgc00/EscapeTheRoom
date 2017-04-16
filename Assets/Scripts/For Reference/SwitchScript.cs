@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchScript : MonoBehaviour {
 
     //PlayerScriptEC myPlay;
-    public NotFloorScript notFloor;
+    //public NotFloorScript notFloor;
 
     // Use this for initialization
     void Start () {
@@ -22,7 +22,7 @@ public class SwitchScript : MonoBehaviour {
         if (other.tag == "Player")
         {
             //myPlay.Interact();
-            notFloor.SwitchMat();
+            //notFloor.SwitchMat();
         }
     }
 }

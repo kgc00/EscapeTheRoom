@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ScoreCollectorScript : MonoBehaviour {
 
-    public PlaneController pc;
-    public EthanScript[] es;
+    //public PlaneController pc;
+    //public EthanScript[] es;
     public static int numOfCollectors;
     public int esScore;
     public int speedScore;
@@ -16,7 +16,7 @@ public class ScoreCollectorScript : MonoBehaviour {
     void Start()
     {
         //es = FindObjectsOfType<EthanScript>();
-        pc = FindObjectOfType<PlaneController>();
+        //pc = FindObjectOfType<PlaneController>();
     }
 
     private void Awake()
@@ -32,10 +32,10 @@ public class ScoreCollectorScript : MonoBehaviour {
 
     public void StoreScore()
     {
-        es = FindObjectsOfType<EthanScript>();
-        esScore = es.Length * 500;
-        speedScore = Mathf.RoundToInt(pc.speed);
-        healthPenalty = Mathf.RoundToInt(pc.maxHealth - pc.health);
+        //es = FindObjectsOfType<EthanScript>();
+        //esScore = es.Length * 500;
+        //speedScore = Mathf.RoundToInt(pc.speed);
+        //healthPenalty = Mathf.RoundToInt(pc.maxHealth - pc.health);
 
     }
 }
