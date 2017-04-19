@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCScript : MonoBehaviour {
 
-    PlayerScriptEC myPlay;
+    //PlayerScriptEC myPlay;
     public float dialogueWaitTime;
     float dialogueLength;
     int dialogueType;
@@ -15,7 +15,7 @@ public class NPCScript : MonoBehaviour {
     {
         Renderer rend = gameObject.GetComponent<Renderer>();
         rend.material.color = new Color(Random.value, Random.value, Random.value);
-        myPlay = FindObjectOfType<PlayerScriptEC>();        
+        //myPlay = FindObjectOfType<PlayerScriptEC>();        
 
     }
 
@@ -29,9 +29,9 @@ public class NPCScript : MonoBehaviour {
     {        
         if (other.tag == "Player")
         {
-            myPlay.npcDialogueText = dialogueText;
-            myPlay.dialogueWaitTime = dialogueWaitTime;
-            myPlay.Interact();
+            //myPlay.npcDialogueText = dialogueText;
+            //myPlay.dialogueWaitTime = dialogueWaitTime;
+            //myPlay.Interact();
         }
     }
 }

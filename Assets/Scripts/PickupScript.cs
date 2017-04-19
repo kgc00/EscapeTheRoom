@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour {
 
-    PlayerScriptEC myPlay;
+    //PlayerScriptEC myPlay;
 
     // Use this for initialization
     void Start () {
 		Renderer rend = gameObject.GetComponent<Renderer> ();
 		rend.material.color = new Color (Random.value, Random.value, Random.value);
-        myPlay = FindObjectOfType<PlayerScriptEC>();
+        //myPlay = FindObjectOfType<PlayerScriptEC>();
 
     }
 	
@@ -23,9 +23,9 @@ public class PickupScript : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            myPlay.hasKey = true;
-            myPlay.inventoryString = myPlay.inventoryString + "KeySphere";
-            myPlay.Pickup();
+            //myPlay.hasKey = true;
+            //myPlay.inventoryString = myPlay.inventoryString + "KeySphere";
+            //myPlay.Pickup();
             Destroy(gameObject);
         }
     }

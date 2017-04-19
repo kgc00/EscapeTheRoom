@@ -60,7 +60,7 @@ public class PlayerContoller : MonoBehaviour {
 
     public void CoinDecrement()
     {
-        ps.coinsLeft--;
-        ps.scoreValue = ps.scoreValue + 10;
+        //ps.coinsLeft--;
+        //ps.scoreValue = ps.scoreValue + 10;
     }
 }

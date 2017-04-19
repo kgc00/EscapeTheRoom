@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f0c0000e471466a47b1061e1a7b61333
+timeCreated: 1492289948
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Poseidon AOE
+  fontNames:
+  - Poseidon AOE
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
