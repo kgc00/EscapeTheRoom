@@ -46,76 +46,26 @@ public class EscapeController : MonoBehaviour
                 //Debug.Log("Click");
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                bool hitFloor = Physics.Raycast(ray, out hit, 1000, geometryMask);
-                bool hitInteractable = Physics.Raycast(ray, out hit, 1000, interactableMask);
-                bool hitPuzzle = Physics.Raycast(ray, out hit, 1000, puzzleMask);
-                bool hitMove = Physics.Raycast(ray, out hit, 1000, moveMask);
+                bool hitSomething = Physics.Raycast(ray, out hit, 1000);
 
-                if (hitFloor)
+                if (hitSomething)
                 {
                     //Store the position that we clicked (in the 'destination' variable)
-                    destinationVector = hit.point;                    
+                    destinationVector = hit.point;
                     hasADestination = true;
-
+                    if (hit.collider.gameObject.tag == "MoveLocation")
+                    {   
+                        //hit.collider.gameObject.GetComponent<MoveLocationScript>().MoveMethod();
+                        transform.position = hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation;
+                    }
                     //Instantiate a notification of where you clicked
                     GameObject sparkle = (GameObject)Instantiate(destinationSparkle, destinationVector, Quaternion.identity);
                     Destroy(sparkle, 3);
-                } else if (hitInteractable)
-                {
-
-                } else if (hitPuzzle)
-                {
-
-                } else if (hitMove)
-                {
-                    transform.position = hit.point;
-                }
+                }                
             }                
         }
     }
 }
-                //RaycastHit hitnotFloor;
-                //hitSomethingNF = Physics.Raycast(ray, out hitnotFloor, 1000, notFloorMask);
-                /*
-                if (hit.point.y - transform.position.y > .6f || hit.point.y - transform.position.y < -2f)
-                {
-                    //Debug.Log("Click");
-                    ps.CantReach();
-                }
-                else if (hitSomething)
-                {
-                        //Store the position that we clicked (in the 'destination' variable)
-                        destination = hit.point;
-                        destination.y = hit.point.y + .7f;  //myPlay.transform.position.y;
-                        hasADestination = true;
-
-                        //Instantiate a notification of where you clicked
-                        GameObject sparkle = (GameObject)Instantiate(destinationSparkle, destination, Quaternion.identity);
-                        Destroy(sparkle, 3);
-                    }
-                else if (hitSomethingNF)
-                    {
-                        ps.NotFloor();
-                    }
-                }
-
-                if (hasADestination)
-                {
-                    //Rotate toward the destination
-                    transform.LookAt(destination);
-
-                    //Move toward the destination (which is forward because of the LookAt command above)
-                    transform.position = transform.position + transform.forward * moveSpeed * Time.deltaTime;
-
-                    //If we are close to the destination, stop moving toward the destination
-                    float distanceToDestination = Vector3.Distance(transform.position, destination);
-                    if (distanceToDestination < 0.1f)
-                    {
-                        hasADestination = false;
-                    }
-                }
-            }        
-        }
-        */
+               
    
    

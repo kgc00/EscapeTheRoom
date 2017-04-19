@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MoveLocationScript : MonoBehaviour {
 
-    public int myMoveInt;
+    //public int myMoveInt;
     public Vector3 myMoveLocation;
     public EscapeController ec;
     public EscapeScript es;
+    public GameObject myPlay;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +20,9 @@ public class MoveLocationScript : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    public void MoveMethod()
     {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Player noticed me");
-        }
-    }
+        Debug.Log(myPlay.transform.position);
+        myPlay.transform.position += new Vector3 (20,0,10);       
+    }    
 }

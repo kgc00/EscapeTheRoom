@@ -21,30 +21,30 @@ public class CameraTriggerScript : MonoBehaviour {
         //}
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            if (triggerNum == 1)
-            {
-                cam.camNum = 1;
-                cam.ChangeCamera();
-            }
-            else if (triggerNum == 2)
-            {
-                cam.camNum = 2;
-                cam.ChangeCamera();
-            }
-            else if (triggerNum == 3)
-            {
-                cam.camNum = 3;
-                cam.ChangeCamera();
-            }
-            else if (triggerNum == 4)
-            {
-                cam.camNum = 4;
-                cam.ChangeCamera();
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        if (triggerNum == 1)
+    //        {
+    //            cam.camNum = 1;
+    //            cam.ChangeCamera();
+    //        }
+    //        else if (triggerNum == 2)
+    //        {
+    //            cam.camNum = 2;
+    //            cam.ChangeCamera();
+    //        }
+    //        else if (triggerNum == 3)
+    //        {
+    //            cam.camNum = 3;
+    //            cam.ChangeCamera();
+    //        }
+    //        else if (triggerNum == 4)
+    //        {
+    //            cam.camNum = 4;
+    //            cam.ChangeCamera();
+    //        }
+    //    }
+    //}
 }
