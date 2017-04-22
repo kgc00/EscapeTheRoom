@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - MoveLocation
+  - GreenSphere
+  - RedSphere
+  - BlueSphere
+  - BluePosition
+  - RedPosition
+  - GreenPosition
   layers:
   - Default
   - TransparentFX
