@@ -11,6 +11,8 @@ TagManager:
   - BluePosition
   - RedPosition
   - GreenPosition
+  - Geometry
+  - UI
   layers:
   - Default
   - TransparentFX
