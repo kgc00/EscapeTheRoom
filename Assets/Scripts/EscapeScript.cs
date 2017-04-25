@@ -45,6 +45,7 @@ public class EscapeScript : MonoBehaviour
         //deadIMG.enabled = false;
         //click.enabled = false;
         //goalText.enabled = false;
+
     }
 
     // Update is called once per frame
