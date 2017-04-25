@@ -7,14 +7,15 @@ public class EscapeController : MonoBehaviour
 
     //CharacterController cc;
     EscapeScript es;
+    public Quaternion myRot;
 
     //public int score = 0;
     //float moveSpeed = 5f;
     public bool canMove = true;
-    public LayerMask interactableMask;
-    public LayerMask puzzleMask;
-    public LayerMask geometryMask;
-    public LayerMask moveMask;
+    //public LayerMask interactableMask;
+    //public LayerMask puzzleMask;
+    //public LayerMask geometryMask;
+    //public LayerMask moveMask;
 
     Vector3 destinationVector;
     public int destinationInt;
@@ -24,6 +25,9 @@ public class EscapeController : MonoBehaviour
     public GameObject destinationSparkle;
     public GameObject myPlay;
     public Vector3 myPlayPosition;
+    public LayerMask uiMask;
+
+    float tiltValue = 0;
 
 
     // Use this for initialization
@@ -41,30 +45,44 @@ public class EscapeController : MonoBehaviour
             canMove = false;
         }
         if (canMove)
-        {
+        {            
             if (Input.GetMouseButtonDown(0))
             {
-                //Debug.Log("Click");
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 bool hitSomething = Physics.Raycast(ray, out hit, 1000);
 
                 if (hitSomething)
                 {
-                    //Store the position that we clicked (in the 'destination' variable)
+                    //Store the position that we clicked (in the 'destination' variable)                   
                     destinationVector = hit.point;
                     hasADestination = true;
                     if (hit.collider.gameObject.tag == "MoveLocation")
-                    {   
+                    {
                         //hit.collider.gameObject.GetComponent<MoveLocationScript>().MoveMethod();
-                        transform.position = hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation;
+                        transform.position = new Vector3(hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation.x, transform.position.y, hit.collider.gameObject.GetComponent<MoveLocationScript>().myMoveLocation.z);
                     }
-                    //Instantiate a notification of where you clicked
-                    GameObject sparkle = (GameObject)Instantiate(destinationSparkle, destinationVector, Quaternion.identity);
-                    Destroy(sparkle, 3);
-                }                
-            }                
+                    else
+                    {
+                        //Instantiate a notification of where you clicked
+                        //GameObject sparkle = (GameObject)Instantiate(destinationSparkle, destinationVector, Quaternion.identity);
+                        //Destroy(sparkle, 3);
+                    }
+                }
+            }
         }
+    }
+
+    public void RightArrowClicked()
+    {
+        Camera.main.transform.rotation = Quaternion.Euler(0, tiltValue + 30, 0);
+        tiltValue = tiltValue + 30;
+    }
+
+    public void LeftArrowClicked()
+    {
+        Camera.main.transform.rotation = Quaternion.Euler(0, tiltValue - 30, 0);
+        tiltValue = tiltValue - 30;
     }
 }
                

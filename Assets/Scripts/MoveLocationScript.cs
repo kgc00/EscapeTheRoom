@@ -18,11 +18,5 @@ public class MoveLocationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-    public void MoveMethod()
-    {
-        Debug.Log(myPlay.transform.position);
-        myPlay.transform.position += new Vector3 (20,0,10);       
-    }    
+	}  
 }
